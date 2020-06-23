@@ -1,3 +1,5 @@
 #!/bin/bash
 
-write-output "kane"
+name="mynameisjef"
+
+echo $name
