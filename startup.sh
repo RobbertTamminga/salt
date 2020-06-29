@@ -7,7 +7,7 @@ if ! command -v salt;
         if ! grep -Fxq "master: 10.0.0.28" "/etc/salt/minion";
             then
                 echo "master: 10.0.0.28" >> /etc/salt/minion
-                sudo systemctl restart salt-minion.service
+                sudo systemctl restart salt-minion
         fi
 else
     echo "F"
