@@ -41,11 +41,7 @@ if ! command -v wordpress;
     #login via localhost/wordpress/wp-login.php
 
     service apache2 restart
-    service mysql-server restart
-    service mysql-client restart
-    service php7.2 restart
-    service php7.2-mysql restart
-    service libapache2-mod-php7.2 restart
+    service mysql restart
     
 else
     echo "F"
