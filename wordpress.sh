@@ -3,7 +3,7 @@
 if ! command -v wordpress;
     then
     apt-get update
-    apt-get install php-mysql mysql-server php7.2 libapache2-mod-php7.2 wordpress
+    apt-get install -y php-mysql mysql-server php7.2 libapache2-mod-php7.2 wordpress
 
     touch /etc/apache2/sites-available/wordpress.conf
     echo    "Alias /wordpress /usr/share/wordpress
