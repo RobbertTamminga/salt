@@ -29,6 +29,15 @@ if ! command -v wordpress;
 	GRANT ALL PRIVILEGES ON wordpress.* TO 'robbert'@'%';
 	FLUSH PRIVILEGES;"
 
+    echo    "<?php
+            define('DB_NAME', 'wordpress');
+            define('DB_USER', 'robbert');
+            define('DB_PASSWORD', '123-Welkom-123');
+            define('DB_HOST', 'localhost');
+            define('DB_COLLATE', 'utf8_general_ci');
+            define('WP_CONTENT_DIR', '/usr/share/wordpress/wp-content');
+            ?>" >> /etc/wordpress/config-10.0.0.72.php
+
     #login via localhost/wordpress/wp-login.php
 
     service apache2 restart
