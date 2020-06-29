@@ -1,8 +1,14 @@
 #!/bin/bash
 
-if [! saltstack];
+if ! command -v salt;
     then
         curl -L https://bootstrap.saltstack.com -o install_salt.sh
         sudo sh install_salt.sh
-        echo "master: 10.0.0.28" > /etc/salt/minion.conf
+        if ! grep -Fxq "master: 10.0.0.28" "/etc/salt/minion";
+            then
+                echo "master: 10.0.0.28" >> /etc/salt/minion
+                sudo systemctl restart salt-minion.service
+        fi
+else
+    echo "F"
 fi
