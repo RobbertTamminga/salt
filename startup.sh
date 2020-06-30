@@ -8,6 +8,7 @@ if ! command -v salt;
             then
                 echo "master: 10.0.0.28" >> /etc/salt/minion
                 sudo systemctl restart salt-minion
+                echo "Minion successfull installed"
         fi
 else
     echo "F"
